@@ -21,7 +21,7 @@ env.hosts = [
     REMOTE_HOST_SSH,
 ]
 env.use_ssh_config = True
-env.key_filename = '../gemoney.pem'
+env.key_filename = '../dghwang.pem'
 project_folder = '/home/{}/{}'.format(env.user, PROJECT_NAME)
 apt_requirements = [
     'curl',
@@ -40,12 +40,10 @@ def new_server():
     setup()
     deploy()
 
-
 def setup():
     _get_latest_apt()
     _install_apt_requirements(apt_requirements)
     _make_virtualenv()
-
 
 def deploy():
     _get_latest_source()
